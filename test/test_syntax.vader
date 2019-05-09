@@ -1,0 +1,37 @@
+
+#
+# JavaScript
+#
+Given svelte:
+  <script>
+  //
+  </script>
+
+Execute:
+  AssertEqual 'javaScriptLineComment', SyntaxAt(2, 1)
+  AssertEqual 'htmlScriptTag', SyntaxAt(1, 1)
+
+
+Given svelte (Script tag with misc. attributes and newline):
+  <script type="text/babel"
+          lang="babel"
+  >
+  //
+  </script>
+
+Execute:
+  AssertEqual 'javaScriptLineComment', SyntaxAt(4, 1)
+  AssertEqual 'htmlArg', SyntaxAt(2, 9)
+  AssertEqual 'htmlScriptTag', SyntaxAt(1, 1)
+
+#
+# CSS
+#
+Given svelte (CSS region without lang attribute):
+  <style>
+  /**/
+  </style>
+
+Execute:
+  AssertEqual 'cssComment', SyntaxAt(2, 1)
+  AssertEqual 'htmlTag', SyntaxAt(1, 1)
