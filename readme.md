@@ -13,6 +13,12 @@ This was initially forked from
 Plugin 'burner/vim-svelte'
 ```
 
+### Install with [Plug](https://github.com/junegunn/vim-plug)
+
+```viml
+Plug 'burner/vim-svelte'
+```
+
 ### Install with [Pathogen](https://github.com/tpope/vim-pathogen)
 
 ```bash
